@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipesApp.Web", "RecipesApp.Web\RecipesApp.Web.csproj", "{1AADBAF8-09A2-4933-925E-00EC26540001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipesApp.Web.Tests", "RecipesApp.Web.Tests\RecipesApp.Web.Tests.csproj", "{090CCF07-4BB7-428D-8ECE-1951D689AC7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipesApp.DAL", "RecipesApp.DAL\RecipesApp.DAL.csproj", "{DF312346-4C1A-45B0-9435-06AE77E3493C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1AADBAF8-09A2-4933-925E-00EC26540001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AADBAF8-09A2-4933-925E-00EC26540001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AADBAF8-09A2-4933-925E-00EC26540001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AADBAF8-09A2-4933-925E-00EC26540001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{090CCF07-4BB7-428D-8ECE-1951D689AC7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{090CCF07-4BB7-428D-8ECE-1951D689AC7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{090CCF07-4BB7-428D-8ECE-1951D689AC7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{090CCF07-4BB7-428D-8ECE-1951D689AC7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF312346-4C1A-45B0-9435-06AE77E3493C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF312346-4C1A-45B0-9435-06AE77E3493C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF312346-4C1A-45B0-9435-06AE77E3493C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF312346-4C1A-45B0-9435-06AE77E3493C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

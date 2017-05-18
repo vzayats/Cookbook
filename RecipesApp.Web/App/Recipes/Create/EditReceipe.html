@@ -1,0 +1,51 @@
+﻿<div>
+    <div class="modal-header">
+        <h3 class="modal-title">Edit recipe</h3>
+    </div>
+    <div class="modal-body">
+        <form name="editForm" ng-submit="submitForm()" class="form-horizontal" novalidate>
+            <div class="form-group" ng-class="{ 'has-error' : editForm.name.$invalid && !editForm.name.$pristine }">
+                <label class="col-sm-2">Recipe name:</label>
+                <input type="text" name="name" id="name" class="form-control text-valid" ng-model="createReceipeCtrl.recipe.Name" placeholder="Enter recipe name" required>
+                <p ng-show="editForm.name.$error.required && editForm.name.$touched" class="help-block col-sm-offset-2" ng-cloak>Name is required</p>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : editForm.description.$invalid && !editForm.description.$pristine }">
+                <label class="col-sm-2">Description:</label>
+                <input type="text" name="description" id="description" class="form-control text-valid" ng-model="createReceipeCtrl.recipe.Description" placeholder="Enter description" required/>
+                <p ng-show="editForm.description.$error.required && editForm.description.$touched" class="help-block col-sm-offset-2" ng-cloak>Description is required</p>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : editForm.ingredients.$invalid && !editForm.ingredients.$pristine }">
+                <label class="col-sm-2">Ingredients:</label>
+                <textarea type="text" name="ingredients" id="ingredients" class="form-control text-valid" ng-model="createReceipeCtrl.recipe.Ingredients" placeholder="Enter recipe ingredients" required></textarea>
+                <p ng-show="editForm.ingredients.$error.required && editForm.ingredients.$touched" class="help-block col-sm-offset-2" ng-cloak>Ingredients is required</p>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : editForm.directions.$invalid && !editForm.directions.$pristine }">
+                <label class="col-sm-2">Directions:</label>
+                <textarea type="text" name="directions" id="directions" class="form-control text-valid" ng-model="createReceipeCtrl.recipe.Directions" placeholder="Enter recipe directions" required></textarea>
+                <p ng-show="editForm.directions.$error.required && editForm.directions.$touched" class="help-block col-sm-offset-2" ng-cloak>Directions is required</p>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : createForm.type.$invalid && !createForm.type.$pristine }">
+                <label class="col-sm-2">Recipe type:</label>
+                <input type="text" name="type" id="type" class="form-control text-valid" ng-model="createReceipeCtrl.recipe.Type" placeholder="Enter recipe type" required>
+                <p ng-show="createForm.type.$error.required && createForm.type.$touched" class="help-block col-sm-offset-2" ng-cloak>Recipe type is required</p>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : editForm.ImageLink.$invalid && !editForm.ImageLink.$pristine }">
+                <label class="col-sm-2">Image link:</label>
+                <input type="url" name="ImageLink" id="ImageLink" class="form-control text-valid" ng-model="createReceipeCtrl.recipe.ImageLink" placeholder="Enter image link" required/>
+                <p ng-show="editForm.ImageLink.$error.url" class="help-block col-sm-offset-2" ng-cloak>Not a valid image link</p>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2">Notes:</label>
+                <textarea type="text" name="notes" id="notes" class="form-control" ng-model="createReceipeCtrl.recipe.Notes" placeholder="Enter notes"></textarea>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" style="margin-bottom: 0" ng-click="createReceipeCtrl.saveRecipe()" title="Save changes" ng-disabled="editForm.$invalid">
+        Save
+    </button>
+    <button class="btn btn-default" type="button" ng-click="createReceipeCtrl.cancel()">
+        Cancel
+    </button>
+</div>

@@ -1,0 +1,75 @@
+﻿<section class="wrapper">
+    <div class="container-big">
+        <div class="row">
+            <div class="col-md-2">
+                <button type="button" class="btn btn-labeled btn-info" ng-click="recipesCtrl.createRecipe('lg')" title="Create new recipe">
+                    <span class="btn-label">
+                        <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i>
+                    </span> Create recipe
+                </button>
+            </div>
+            <div class="col-md-6 col-md-offset-2">
+                <div class="input-group">
+                    <form id="form-container">
+                        <div id="searchtext">
+                            <input type="text" size="40" value="" name="s" id="s" placeholder="Search recipe..." ng-model="recipesCtrl.searchText">
+                            <a id="clear_input" ng-show="recipesCtrl.searchText.length > 0" ng-click="recipesCtrl.cancelSearch()">
+                                <i class="fa fa-times"></i>
+                            </a>
+                            <button class="search-submit-button" type="submit" ng-click="recipesCtrl.search()">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <h3>
+            Your recipes:
+        </h3>
+        <div ng-show="recipesCtrl.data.length == 0">
+            <br/>
+            <h2 class="text-muted text-center">
+                You have no recipes. <a href="" ng-click="recipesCtrl.createRecipe('lg')">Create new recipe.</a>
+            </h2>
+        </div>
+        <div class="content">
+            <div infinite-scroll="recipesCtrl.getRecipes()">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4" ng-repeat="recipe in recipesCtrl.data | orderBy: '-DateCreated' | 
+                             filterBy: ['Name', 'Description', 'Type']: recipesCtrl.recipesFilter ">
+                            <div class="carbox">
+                                <a class="img-carbox" ui-sref="Recipe({ Id: recipe.Id })">
+                                    <img src="{{recipe.ImageLink}}"/>
+                                </a>
+                                <div class="carbox-content">
+                                    <h4 class="carbox-title">
+                                        <a ui-sref="Recipe({ Id: recipe.Id })" title="{{recipe.Name}}">
+                                            <span ng-bind="recipe.Name"></span>
+                                        </a>
+                                    </h4>
+                                    <div title="Type">
+                                        <i class="fa fa-tag" aria-hidden="true"></i> <span ng-bind="recipe.Type"></span>
+                                    </div>
+                                    <p title="{{recipe.Description}}" style="overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical;">
+                                        {{recipe.Description }}
+                                    </p>
+                                </div>
+                                <p>
+                                    <a class="btn icon-btn btn-info" title="Edit recipe" ng-click="recipesCtrl.editRecipe('lg', recipe.Id)"><span class="glyphicon btn-glyphicon glyphicon-pencil img-circle text-info"></span>Edit </a>
+                                    <a class="btn icon-btn btn-danger" title="Delete recipe" ng-click="recipesCtrl.removeRecipe(recipe.Id)"><span class="glyphicon btn-glyphicon glyphicon-trash img-circle text-danger"></span>Delete </a>
+                                </p>
+                                <div class="carbox-read-more">
+                                    <a ui-sref="Recipe({ Id: recipe.Id })" class="btn btn-link btn-block">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
